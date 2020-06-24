@@ -1,0 +1,51 @@
+header {
+  height: 80px;
+  background-color: #f0f0f0;
+  padding: 10px 0;
+  display: flex;
+  background-color:#A7F1FF;
+  .Title{
+    width: 70%;
+    font-size: 30px;
+    margin: auto 60px;
+    .navbar{
+      width: 30%;
+      padding: 20px;
+      font-size: small;
+      position: relative;
+      .nav-lists{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        position: absolute;
+        right: 50px;
+      }
+      // .nav-link
+    }
+  }
+}
+
+.Main-box{
+  margin: 10vh 10vw;
+  background-color: #EEEEEE;
+  .heading-name{
+    text-align: center;
+    background-color: #A7F1FF;
+    width: 100%;
+    margin-top: 0px;
+    height: 50px;
+    font-size: 30px;
+  }
+  .messages{
+    width: 50vw;
+    margin-left: 150px;
+    padding: 20px;
+    .message{
+      margin: 10px 10px;
+      .list{
+        font-size: 15px;
+        padding: 10px 10px;
+      }
+    }
+  }
+}

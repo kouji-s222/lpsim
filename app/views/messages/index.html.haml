@@ -1,0 +1,84 @@
+.wrapper
+
+%html
+  %head
+    %meta{"charset":"UTF-8"}
+    %title Life Plan
+
+  %body
+    %header
+      %h1.Title ライフプランシュミレーション
+      .navbar
+        .nav-link ユーザ名
+        = current_user.name
+        .nav-lists
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Button'
+    .Main-box
+      %h2.heading-name 収入について
+      .messages
+        .message
+          .list 年齢は？
+          .list 年収
+      %h3.heading-name 支出について
+      .messages
+        .message
+          .list 生活費
+          .list 住宅関連費
+          .list 交通費
+          .list 教育費
+          .list 保険料
+          .list その他
+
+      -#   <li class="message">
+      -#     <div class="message-date">年収
+      -#       <input class="form-control" type="text" name="input_data" maxlength="255">　万円
+      -#     </div>
+      -#   </li>
+      -# </ul>
+
+      -# <h2 class="heading-name">支出について</h2>
+      -# <ul class="messages">
+      -#   <li class="message">
+      -#     <div class="message-date">生活費
+      -#       <input class="form-control" type="text" name="input_data" maxlength="255">　万円
+      -#     </div>
+      -#   </li>
+      -#   <li class="message">
+      -#     <div class="message-date">住宅関連費
+      -#       <input class="form-control" type="text" name="input_data" maxlength="255">　万円
+      -#     </div>
+      -#   </li>
+      -#   <li class="message">
+      -#     <div class="message-date">交通費
+      -#       <input class="form-control" type="text" name="input_data" maxlength="255">　万円
+      -#     </div>
+      -#   </li>
+      -#   <li class="message">
+      -#     <div class="message-date">教育費
+      -#       <input class="form-control" type="text" name="input_data" maxlength="255">　万円
+      -#     </div>
+      -#   </li>
+      -#   <li class="message">
+      -#     <div class="message-date">保険料
+      -#       <input class="form-control" type="text" name="input_data" maxlength="255">　万円
+      -#     </div>
+      -#   </li>
+      -#   <li class="message">
+      -#     <div class="message-date">その他
+      -#       <input class="form-control" type="text" name="input_data" maxlength="255">　万円
+
+    -# <!-- 「サイドバー」と「コンテンツ本体部分」 -->
+    -# <div id="content" class="container-fluid">
+    -#   <div class="row flex-xl-nowrap">
+
+    -#     <!-- ↓↓コンテンツ本体↓↓ -->
+    -#     <div class="col-10">
+    -#       <h4 class="mt-5 mb-4 border-bottom"></h4>
+    -#       <form  action="{% url 'app_folder:top_page' %}" method="post">
+    -#       <div class="container-fluid">
+    -#         <div class="row">
+    -#           <div class="col-2">
+    -#             <div class="text-left align-bottom">
+    -#                 <button type="submit" name="button" class="btn btn-info">
+    -#                   シュミレーションする
+    -#                 </button>
