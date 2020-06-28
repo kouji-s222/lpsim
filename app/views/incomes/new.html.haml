@@ -1,0 +1,16 @@
+.contents 支出について
+.container 
+  = form_with(model: @income, url: incomes_path(@income)) do |form|
+    %P= form.label :living, "生活費"
+    = form.text_field :name, placeholder: ""
+    %p= form.label :living, "住宅関連費"
+    = form.text_field :name, placeholder: ""
+    %p= form.label :living, "交通費"
+    = form.text_field :name, placeholder: ""
+    %p= form.label :living, "教育費"
+    = form.text_field :name, placeholder: ""
+    %p= form.label :living, "保険料"
+    = form.text_field :name, placeholder: ""
+    %p= form.label :living, "その他"
+    = form.text_field :name, placeholder: ""
+    = form.submit "シュミレーションする", class: 'form-button'

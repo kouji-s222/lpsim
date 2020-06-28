@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_24_141427) do
+ActiveRecord::Schema.define(version: 2020_06_24_150607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "incomes", force: :cascade do |t|
+    t.integer "total_income"
+    t.integer "income_tax"
+    t.integer "living"
+    t.integer "housing"
+    t.integer "transportation"
+    t.integer "education"
+    t.integer "insurance"
+    t.integer "event"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
