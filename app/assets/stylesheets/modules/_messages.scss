@@ -1,53 +1,283 @@
-header {
-  height: 80px;
-  background-color: #f0f0f0;
-  padding: 10px 0;
-  display: flex;
-  background-color:#A7F1FF;
-  .Title{
-    width: 70%;
-    font-size: 30px;
-    margin: auto 60px;
-    .navbar{
-      width: 30%;
-      padding: 20px;
-      font-size: small;
-      position: relative;
-      .nav-lists{
-        margin: 0;
-        padding: 0;
-        display: flex;
-        position: absolute;
-        right: 50px;
-      }
-      // .nav-link
-    }
-  }
+@mixin  Agebox {
+  height: 40px;
+  width: 80px;
 }
 
-.Main-box{
-  margin: 10vh 10vw;
-  background-color: #EEEEEE;
-  .heading-name{
-    text-align: center;
-    background-color: #A7F1FF;
-    width: 100%;
-    margin-top: 0px;
-    height: 50px;
-    font-size: 30px;
-  }
-  .messages{
-    width: 50vw;
-    margin-left: 150px;
-    padding: 20px;
-    .message{
-      margin: 10px 10px;
-      .form-label{
-        justify-content: center;
-        font-size: 25px;
+@mixin  ttl {
+  border-bottom: 1px solid #3CCACE;
+  margin: 20px 0;
+  padding-bottom: 0.4em;
+  padding-left: 0.3em;
+}
+
+
+.wrapper{
+  line-height: 1.5;
+  header{
+    height: 150px;
+    background-color: #3CCACE;
+    padding: 20px 30px;
+    .content.header-page{
+      width: 90%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      h1{
+        position: absolute;
+        font-size: 40px;
+        top: 10px;
+        left: 20px;
+        color: white;
       }
-      .input-form{
-        font-size: 25px;
+      .navbar{
+        position: absolute;
+        right: 0px;
+        display: flex;
+      }
+      .Button{
+        position: absolute;
+        display: block;
+        width: 72px;
+        top: 30px;
+        right: 20px;
+        padding: 3px 15px;
+        border: 1px solid black;
+        color: black;
+        text-decoration: none;
+      }
+    }
+  }
+  .top-note{
+    font-size: 14px;
+    padding: 10px;
+  }
+  .page-advance{
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+    .content{
+      background-color: #f2f2f2;
+      width: 60%;
+      section{
+        h2{
+          font-size: 25px;
+          background-color: #3CCACE;
+          height: 40px;
+          color: white;
+          padding: 15px;
+        }
+        dl{
+          display: flex;
+          align-items: center;
+          padding: 20px 0 20px;
+          border-bottom: 2px solid black;
+          width: 100%;
+          dt{
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            font-size: 25px;
+          }
+          .form-myself{
+            flex: 0 60%;
+            padding-left: 16px;
+            padding-right: 16px;
+            align-items: center;
+            font-size: 1.1em;
+            .form-box{
+              flex: 1;
+              padding-right: 16px;
+              p{
+                @include ttl;
+              }
+              .form-flex{
+                margin: 20px 0;
+                .select-wrap{
+                  .myage{
+                    @include Agebox;
+                  }
+                }
+                input{
+                  width: 80px;
+                  padding: 5px 20px;
+                }
+              }
+            }
+            .marrige-flex{
+              display: flex;
+              align-items: center;
+              margin: 10px 0;
+              .select-wrap{
+                select{
+                  @include Agebox;
+                  margin: 0 10px;
+                }
+              }
+              label{
+                display: block;
+                span{
+                  line-height: 24px;
+                }
+              }
+            }
+            .form-spouses-add{
+              .form-ttl{
+                @include ttl;
+              }
+              .form-flex{
+                margin: 20px 0;
+                input{
+                  width: 80px;
+                  padding: 5px 20px;
+                }
+              }
+              .form-note{
+                font-size: 16px;
+              }
+            }
+          }
+          dd{
+            width: 70%;
+            flex: 0 60%;
+            padding-left: 16px;
+            padding-right: 16px;
+            align-items: center;
+            font-size: 1.1em;
+            .js-children-add-0{
+              .form-ttl{
+                @include ttl;
+              }
+              .form-flex.col2{
+                .form-child{
+                  display: flex;
+                  align-items: center;
+                  .select-wrap{
+                    margin: 5px 10px;
+                    select{
+                      padding: 2px 10px;
+                      width: 80px;
+                      height: 40px;
+                    }
+                  }
+                  span{
+                    margin: 0 10px;
+                  }
+                }
+              }
+              .select-wrap{
+                select{
+                  width: 200px;
+                  height: 40px;
+                  padding: 2px 10px;
+                }
+              }
+              label{
+                input{
+                  width: 80px;
+                  padding: 5px 20px;
+                  margin: 10px 10px;
+                }
+              }
+              .mt-1em{
+                display: flex;
+                align-items: center;
+                .select-wrap{
+                  select{
+                    @include Agebox;
+                    margin: 0 10px;
+                  }
+                }
+              }
+            }
+            .form-myhome-add{
+              .form-ttl{
+                @include ttl;
+              }
+              .form-flex{
+                display: flex;
+                align-items: center;
+                .select-wrap{
+                  select{
+                    @include Agebox;
+                  }
+                }
+                input{
+                  width: 80px;
+                  padding: 5px 20px;
+                  margin: 10px 10px;
+                }
+              }
+              label{
+                input{
+                  width: 80px;
+                  padding: 5px 20px;
+                  margin: 10px 10px;
+                }
+              }
+            }
+            .form-mycar-add{
+              .form-ttl{
+                @include ttl;
+              }
+              .form-flex{
+                display: flex;
+                align-items: center;
+                input{
+                  width: 80px;
+                  padding: 5px 20px;
+                  margin: 10px 10px;
+                }
+                .select-wrap{
+                  select{
+                    @include Agebox;
+                    margin: 0 10px;
+                  }
+                }
+              }
+            }
+            .form-other{
+              display: flex;
+              align-items: center;
+              .select-wrap{
+                select{
+                  @include Agebox;
+                  margin: 0 10px;
+                }
+              }
+              input{
+                width: 80px;
+                padding: 5px 20px;
+                margin: 10px 10px;
+              }
+            }
+            .form-retire{
+              display: flex;
+              align-items: center;
+              .select-wrap{
+                select{
+                  @include Agebox;
+                  margin: 0 10px;
+                }
+              }
+              label{
+                display: flex;
+                align-items: center;
+                input{
+                  width: 80px;
+                  padding: 5px 20px;
+                  margin: 10px 10px;
+                }
+              }
+            }
+            .form-note{
+              margin: 10px 0;
+            }
+            .form-ttl{
+              @include ttl;
+            }
+          }
+        }
       }
     }
   }
