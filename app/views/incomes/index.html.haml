@@ -1,1 +1,1115 @@
-収支確認
+
+.wrapper
+  %header
+    .content.header-page
+      %h1 ライフプランシミュレーション
+      .navbar
+        .nav-user ユーザ名 :&nbsp
+        = current_user.name
+      .nav-link
+      = link_to "Edit", destroy_user_session_path, method: :delete, class: 'Button'
+  .top-note
+    %p ※当シミュレーション結果は、一般的なデータをもとに独自の基準で試算したもので実際の値とは異なる場合があり、その結果を保証するものではありません。 あくまでも目安としてご利用ください。
+  .page-advance
+    %form.content{:action => "./result_a.html", :method => "post"}
+      %section
+        %h2 世帯構成と収入について
+        %dl
+          %dt ご自身について
+          .form-myself
+            .form-box
+              %p.form-ttl 年齢は？
+              .form-flex
+                .select-wrap
+                  %select.myage{name: "myAge"}
+                    %option{value: "18"} 18
+                    %option{value: "19"} 19
+                    %option{value: "20"} 20
+                    %option{value: "21"} 21
+                    %option{value: "22"} 22
+                    %option{value: "23"} 23
+                    %option{value: "24"} 24
+                    %option{value: "25"} 25
+                    %option{value: "26"} 26
+                    %option{value: "27"} 27
+                    %option{value: "28"} 28
+                    %option{value: "29"} 29
+                    %option{selected: "selected", value: "30"} 30
+                    %option{value: "31"} 31
+                    %option{value: "32"} 32
+                    %option{value: "33"} 33
+                    %option{value: "34"} 34
+                    %option{value: "35"} 35
+                    %option{value: "36"} 36
+                    %option{value: "37"} 37
+                    %option{value: "38"} 38
+                    %option{value: "39"} 39
+                    %option{value: "40"} 40
+                    %option{value: "41"} 41
+                    %option{value: "42"} 42
+                    %option{value: "43"} 43
+                    %option{value: "44"} 44
+                    %option{value: "45"} 45
+                    %option{value: "46"} 46
+                    %option{value: "47"} 47
+                    %option{value: "48"} 48
+                    %option{value: "49"} 49
+                    %option{value: "50"} 50
+                    %option{value: "51"} 51
+                    %option{value: "52"} 52
+                    %option{value: "53"} 53
+                    %option{value: "54"} 54
+                    %option{value: "55"} 55
+                    %option{value: "56"} 56
+                    %option{value: "57"} 57
+                    %option{value: "58"} 58
+                    %option{value: "59"} 59
+                    %option{value: "60"} 60
+                    %option{value: "61"} 61
+                    %option{value: "62"} 62
+                    %option{value: "63"} 63
+                    %option{value: "64"} 64
+                    %option{value: "65"} 65
+                    %option{value: "66"} 66
+                    %option{value: "67"} 67
+                    %option{value: "68"} 68
+                    %option{value: "69"} 69
+                    %option{value: "70"} 70
+                    %option{value: "71"} 71
+                    %option{value: "72"} 72
+                    %option{value: "73"} 73
+                    %option{value: "74"} 74
+                    %option{value: "75"} 75
+                  %span 歳
+            .form-box
+              %p.mySavings 年収と貯蓄は？
+              .form-flex
+                %span 年収
+                %input{maxlength: "4", name: "myIncome", type: "text", value: ""}
+                %span 万円
+                %br
+              .form-flex
+                %span 貯蓄
+                %input{maxlength: "5", name: "mySavings", type: "text", value: ""}
+                %span 万円
+        %dl
+          %dt 配偶者は？
+          .form-myself
+            .marrige-flex
+              %label
+                %input{name: "marriage", type: "radio", value: "0"}
+                %span いる
+              .select-wrap
+                %select{name: "spousesAge"}
+                  %option{value: "18"} 18
+                  %option{value: "19"} 19
+                  %option{value: "20"} 20
+                  %option{value: "21"} 21
+                  %option{value: "22"} 22
+                  %option{value: "23"} 23
+                  %option{value: "24"} 24
+                  %option{value: "25"} 25
+                  %option{value: "26"} 26
+                  %option{value: "27"} 27
+                  %option{value: "28"} 28
+                  %option{value: "29"} 29
+                  %option{selected: "selected", value: "30"} 30
+                  %option{value: "31"} 31
+                  %option{value: "32"} 32
+                  %option{value: "33"} 33
+                  %option{value: "34"} 34
+                  %option{value: "35"} 35
+                  %option{value: "36"} 36
+                  %option{value: "37"} 37
+                  %option{value: "38"} 38
+                  %option{value: "39"} 39
+                  %option{value: "40"} 40
+                  %option{value: "41"} 41
+                  %option{value: "42"} 42
+                  %option{value: "43"} 43
+                  %option{value: "44"} 44
+                  %option{value: "45"} 45
+                  %option{value: "46"} 46
+                  %option{value: "47"} 47
+                  %option{value: "48"} 48
+                  %option{value: "49"} 49
+                  %option{value: "50"} 50
+                  %option{value: "51"} 51
+                  %option{value: "52"} 52
+                  %option{value: "53"} 53
+                  %option{value: "54"} 54
+                  %option{value: "55"} 55
+                  %option{value: "56"} 56
+                  %option{value: "57"} 57
+                  %option{value: "58"} 58
+                  %option{value: "59"} 59
+                  %option{value: "60"} 60
+                  %option{value: "61"} 61
+                  %option{value: "62"} 62
+                  %option{value: "63"} 63
+                  %option{value: "64"} 64
+                  %option{value: "65"} 65
+                  %option{value: "66"} 66
+                  %option{value: "67"} 67
+                  %option{value: "68"} 68
+                  %option{value: "69"} 69
+                  %option{value: "70"} 70
+                  %option{value: "71"} 71
+                  %option{value: "72"} 72
+                  %option{value: "73"} 73
+                  %option{value: "74"} 74
+                  %option{value: "75"} 75
+              %span 歳
+            %div
+              %label
+                %input{name: "marriage", type: "radio", value: "2"}
+                %span 結婚してない
+            .form-spouses-add
+              .form-ttl 配偶者の年収と貯蓄額は？
+              .form-flex
+                %span 年収
+                %input{maxlength: "4", name: "spouseIncome", type: "text", value: ""}
+                %span 万円
+                %br
+              .form-flex
+                %span 貯蓄
+                %input{maxlength: "5", name: "spouseSavings", type: "text", value: ""}
+                %span 万円
+              .form-note ※現在育児などで、収入がない（少ない）場合、将来フルタイムで働くことを予定している人はその時の収入をご記入ください。
+              .form-note.hide ※配偶者に希望する金額を記入してください
+        %dl
+          %dt
+            %i.ico-icon_family>
+            お子さまは？
+          %dd.form-children
+            %p.hasChildren
+            %label
+              %input{name: "hasChildren", type: "radio", value: "0"}
+              %span いる
+              %br
+            %label
+              %input{name: "hasChildren", type: "radio", value: "1"}
+              %span いないが、いずれ欲しい
+              %br
+            %label
+              %input{name: "hasChildren", type: "radio", value: "2"}
+              %span いない・欲しくない
+        %dl
+          %dt お子さまについて
+          %dd
+            .js-children-add-0
+              .form-ttl 現在は？
+              .form-flex.col2
+                .form-child
+                  %span 第1子
+                  .select-wrap
+                    %select{name: "childsAge0"}
+                      %option{selected: "selected", value: ""} -
+                      %option{value: "0"} 0
+                      %option{value: "1"} 1
+                      %option{value: "2"} 2
+                      %option{value: "3"} 3
+                      %option{value: "4"} 4
+                      %option{value: "5"} 5
+                      %option{value: "6"} 6
+                      %option{value: "7"} 7
+                      %option{value: "8"} 8
+                      %option{value: "9"} 9
+                      %option{value: "10"} 10
+                      %option{value: "11"} 11
+                      %option{value: "12"} 12
+                      %option{value: "13"} 13
+                      %option{value: "14"} 14
+                      %option{value: "15"} 15
+                      %option{value: "16"} 16
+                      %option{value: "17"} 17
+                      %option{value: "18"} 18
+                      %option{value: "19"} 19
+                      %option{value: "20"} 20
+                      %option{value: "21"} 21
+                      %option{value: "22"} 22
+                      %option{value: "23"} 23
+                      %option{value: "24"} 24
+                      %option{value: "25"} 25
+                      %option{value: "26"} 26
+                      %option{value: "27"} 27
+                      %option{value: "28"} 28
+                      %option{value: "29"} 29
+                      %option{value: "30"} 30
+                  %span 歳
+                  %span 第2子
+                  .select-wrap
+                    %select{name: "childsAge1"}
+                      %option{selected: "selected", value: ""} -
+                      %option{value: "0"} 0
+                      %option{value: "1"} 1
+                      %option{value: "2"} 2
+                      %option{value: "3"} 3
+                      %option{value: "4"} 4
+                      %option{value: "5"} 5
+                      %option{value: "6"} 6
+                      %option{value: "7"} 7
+                      %option{value: "8"} 8
+                      %option{value: "9"} 9
+                      %option{value: "10"} 10
+                      %option{value: "11"} 11
+                      %option{value: "12"} 12
+                      %option{value: "13"} 13
+                      %option{value: "14"} 14
+                      %option{value: "15"} 15
+                      %option{value: "16"} 16
+                      %option{value: "17"} 17
+                      %option{value: "18"} 18
+                      %option{value: "19"} 19
+                      %option{value: "20"} 20
+                      %option{value: "21"} 21
+                      %option{value: "22"} 22
+                      %option{value: "23"} 23
+                      %option{value: "24"} 24
+                      %option{value: "25"} 25
+                      %option{value: "26"} 26
+                      %option{value: "27"} 27
+                      %option{value: "28"} 28
+                      %option{value: "29"} 29
+                      %option{value: "30"} 30
+                  %span 歳
+                .form-child
+                  %span 第3子
+                  .select-wrap
+                    %select{name: "childsAge2"}
+                      %option{selected: "selected", value: ""} -
+                      %option{value: "0"} 0
+                      %option{value: "1"} 1
+                      %option{value: "2"} 2
+                      %option{value: "3"} 3
+                      %option{value: "4"} 4
+                      %option{value: "5"} 5
+                      %option{value: "6"} 6
+                      %option{value: "7"} 7
+                      %option{value: "8"} 8
+                      %option{value: "9"} 9
+                      %option{value: "10"} 10
+                      %option{value: "11"} 11
+                      %option{value: "12"} 12
+                      %option{value: "13"} 13
+                      %option{value: "14"} 14
+                      %option{value: "15"} 15
+                      %option{value: "16"} 16
+                      %option{value: "17"} 17
+                      %option{value: "18"} 18
+                      %option{value: "19"} 19
+                      %option{value: "20"} 20
+                      %option{value: "21"} 21
+                      %option{value: "22"} 22
+                      %option{value: "23"} 23
+                      %option{value: "24"} 24
+                      %option{value: "25"} 25
+                      %option{value: "26"} 26
+                      %option{value: "27"} 27
+                      %option{value: "28"} 28
+                      %option{value: "29"} 29
+                      %option{value: "30"} 30
+                  %span 歳
+                  %span 第4子
+                  .select-wrap
+                    %select{name: "childsAge3"}
+                      %option{selected: "selected", value: ""} -
+                      %option{value: "0"} 0
+                      %option{value: "1"} 1
+                      %option{value: "2"} 2
+                      %option{value: "3"} 3
+                      %option{value: "4"} 4
+                      %option{value: "5"} 5
+                      %option{value: "6"} 6
+                      %option{value: "7"} 7
+                      %option{value: "8"} 8
+                      %option{value: "9"} 9
+                      %option{value: "10"} 10
+                      %option{value: "11"} 11
+                      %option{value: "12"} 12
+                      %option{value: "13"} 13
+                      %option{value: "14"} 14
+                      %option{value: "15"} 15
+                      %option{value: "16"} 16
+                      %option{value: "17"} 17
+                      %option{value: "18"} 18
+                      %option{value: "19"} 19
+                      %option{value: "20"} 20
+                      %option{value: "21"} 21
+                      %option{value: "22"} 22
+                      %option{value: "23"} 23
+                      %option{value: "24"} 24
+                      %option{value: "25"} 25
+                      %option{value: "26"} 26
+                      %option{value: "27"} 27
+                      %option{value: "28"} 28
+                      %option{value: "29"} 29
+                      %option{value: "30"} 30
+                  %span 歳
+                .form-child
+                  %span 第5子
+                  .select-wrap
+                    %select{name: "childsAge4"}
+                      %option{selected: "selected", value: ""} -
+                      %option{value: "0"} 0
+                      %option{value: "1"} 1
+                      %option{value: "2"} 2
+                      %option{value: "3"} 3
+                      %option{value: "4"} 4
+                      %option{value: "5"} 5
+                      %option{value: "6"} 6
+                      %option{value: "7"} 7
+                      %option{value: "8"} 8
+                      %option{value: "9"} 9
+                      %option{value: "10"} 10
+                      %option{value: "11"} 11
+                      %option{value: "12"} 12
+                      %option{value: "13"} 13
+                      %option{value: "14"} 14
+                      %option{value: "15"} 15
+                      %option{value: "16"} 16
+                      %option{value: "17"} 17
+                      %option{value: "18"} 18
+                      %option{value: "19"} 19
+                      %option{value: "20"} 20
+                      %option{value: "21"} 21
+                      %option{value: "22"} 22
+                      %option{value: "23"} 23
+                      %option{value: "24"} 24
+                      %option{value: "25"} 25
+                      %option{value: "26"} 26
+                      %option{value: "27"} 27
+                      %option{value: "28"} 28
+                      %option{value: "29"} 29
+                      %option{value: "30"} 30
+                  %span 歳
+            .js-children-add-0
+              .form-ttl これから何人ほしい？
+              %input{name: "numOfChildrenYouWant", type: "hidden", value: "0"}
+              .form-flex.col2
+                .form-child
+                  %span 今から
+                  .select-wrap
+                    %select{name: "ageWhenChildIsBorn0"}
+                      %option{selected: "selected", value: ""} -
+                      %option{value: "0"} 0
+                      %option{value: "1"} 1
+                      %option{value: "2"} 2
+                      %option{value: "3"} 3
+                      %option{value: "4"} 4
+                      %option{value: "5"} 5
+                      %option{value: "6"} 6
+                      %option{value: "7"} 7
+                      %option{value: "8"} 8
+                      %option{value: "9"} 9
+                      %option{value: "10"} 10
+                      %option{value: "11"} 11
+                      %option{value: "12"} 12
+                      %option{value: "13"} 13
+                      %option{value: "14"} 14
+                      %option{value: "15"} 15
+                      %option{value: "16"} 16
+                      %option{value: "17"} 17
+                      %option{value: "18"} 18
+                      %option{value: "19"} 19
+                      %option{value: "20"} 20
+                      %option{value: "21"} 21
+                      %option{value: "22"} 22
+                      %option{value: "23"} 23
+                      %option{value: "24"} 24
+                      %option{value: "25"} 25
+                      %option{value: "26"} 26
+                      %option{value: "27"} 27
+                      %option{value: "28"} 28
+                      %option{value: "29"} 29
+                      %option{value: "30"} 30
+                      %option{value: "31"} 31
+                      %option{value: "32"} 32
+                      %option{value: "33"} 33
+                      %option{value: "34"} 34
+                      %option{value: "35"} 35
+                      %option{value: "36"} 36
+                      %option{value: "37"} 37
+                      %option{value: "38"} 38
+                      %option{value: "39"} 39
+                      %option{value: "40"} 40
+                  %span 年後に誕生
+                .form-child
+                  %span 今から
+                  .select-wrap
+                    %select{name: "ageWhenChildIsBorn1"}
+                      %option{selected: "selected", value: ""} -
+                      %option{value: "0"} 0
+                      %option{value: "1"} 1
+                      %option{value: "2"} 2
+                      %option{value: "3"} 3
+                      %option{value: "4"} 4
+                      %option{value: "5"} 5
+                      %option{value: "6"} 6
+                      %option{value: "7"} 7
+                      %option{value: "8"} 8
+                      %option{value: "9"} 9
+                      %option{value: "10"} 10
+                      %option{value: "11"} 11
+                      %option{value: "12"} 12
+                      %option{value: "13"} 13
+                      %option{value: "14"} 14
+                      %option{value: "15"} 15
+                      %option{value: "16"} 16
+                      %option{value: "17"} 17
+                      %option{value: "18"} 18
+                      %option{value: "19"} 19
+                      %option{value: "20"} 20
+                      %option{value: "21"} 21
+                      %option{value: "22"} 22
+                      %option{value: "23"} 23
+                      %option{value: "24"} 24
+                      %option{value: "25"} 25
+                      %option{value: "26"} 26
+                      %option{value: "27"} 27
+                      %option{value: "28"} 28
+                      %option{value: "29"} 29
+                      %option{value: "30"} 30
+                      %option{value: "31"} 31
+                      %option{value: "32"} 32
+                      %option{value: "33"} 33
+                      %option{value: "34"} 34
+                      %option{value: "35"} 35
+                      %option{value: "36"} 36
+                      %option{value: "37"} 37
+                      %option{value: "38"} 38
+                      %option{value: "39"} 39
+                      %option{value: "40"} 40
+                  %span 年後に誕生
+                .form-child
+                  %span 今から
+                  .select-wrap
+                    %select{name: "ageWhenChildIsBorn2"}
+                      %option{selected: "selected", value: ""} -
+                      %option{value: "0"} 0
+                      %option{value: "1"} 1
+                      %option{value: "2"} 2
+                      %option{value: "3"} 3
+                      %option{value: "4"} 4
+                      %option{value: "5"} 5
+                      %option{value: "6"} 6
+                      %option{value: "7"} 7
+                      %option{value: "8"} 8
+                      %option{value: "9"} 9
+                      %option{value: "10"} 10
+                      %option{value: "11"} 11
+                      %option{value: "12"} 12
+                      %option{value: "13"} 13
+                      %option{value: "14"} 14
+                      %option{value: "15"} 15
+                      %option{value: "16"} 16
+                      %option{value: "17"} 17
+                      %option{value: "18"} 18
+                      %option{value: "19"} 19
+                      %option{value: "20"} 20
+                      %option{value: "21"} 21
+                      %option{value: "22"} 22
+                      %option{value: "23"} 23
+                      %option{value: "24"} 24
+                      %option{value: "25"} 25
+                      %option{value: "26"} 26
+                      %option{value: "27"} 27
+                      %option{value: "28"} 28
+                      %option{value: "29"} 29
+                      %option{value: "30"} 30
+                      %option{value: "31"} 31
+                      %option{value: "32"} 32
+                      %option{value: "33"} 33
+                      %option{value: "34"} 34
+                      %option{value: "35"} 35
+                      %option{value: "36"} 36
+                      %option{value: "37"} 37
+                      %option{value: "38"} 38
+                      %option{value: "39"} 39
+                      %option{value: "40"} 40
+                  %span 年後に誕生
+                .form-child
+                  %span 今から
+                  .select-wrap
+                    %select{name: "ageWhenChildIsBorn3"}
+                      %option{selected: "selected", value: ""} -
+                      %option{value: "0"} 0
+                      %option{value: "1"} 1
+                      %option{value: "2"} 2
+                      %option{value: "3"} 3
+                      %option{value: "4"} 4
+                      %option{value: "5"} 5
+                      %option{value: "6"} 6
+                      %option{value: "7"} 7
+                      %option{value: "8"} 8
+                      %option{value: "9"} 9
+                      %option{value: "10"} 10
+                      %option{value: "11"} 11
+                      %option{value: "12"} 12
+                      %option{value: "13"} 13
+                      %option{value: "14"} 14
+                      %option{value: "15"} 15
+                      %option{value: "16"} 16
+                      %option{value: "17"} 17
+                      %option{value: "18"} 18
+                      %option{value: "19"} 19
+                      %option{value: "20"} 20
+                      %option{value: "21"} 21
+                      %option{value: "22"} 22
+                      %option{value: "23"} 23
+                      %option{value: "24"} 24
+                      %option{value: "25"} 25
+                      %option{value: "26"} 26
+                      %option{value: "27"} 27
+                      %option{value: "28"} 28
+                      %option{value: "29"} 29
+                      %option{value: "30"} 30
+                      %option{value: "31"} 31
+                      %option{value: "32"} 32
+                      %option{value: "33"} 33
+                      %option{value: "34"} 34
+                      %option{value: "35"} 35
+                      %option{value: "36"} 36
+                      %option{value: "37"} 37
+                      %option{value: "38"} 38
+                      %option{value: "39"} 39
+                      %option{value: "40"} 40
+                  %span 年後に誕生
+                .form-child
+                  %span 今から
+                  .select-wrap
+                    %select{name: "ageWhenChildIsBorn4"}
+                      %option{selected: "selected", value: ""} -
+                      %option{value: "0"} 0
+                      %option{value: "1"} 1
+                      %option{value: "2"} 2
+                      %option{value: "3"} 3
+                      %option{value: "4"} 4
+                      %option{value: "5"} 5
+                      %option{value: "6"} 6
+                      %option{value: "7"} 7
+                      %option{value: "8"} 8
+                      %option{value: "9"} 9
+                      %option{value: "10"} 10
+                      %option{value: "11"} 11
+                      %option{value: "12"} 12
+                      %option{value: "13"} 13
+                      %option{value: "14"} 14
+                      %option{value: "15"} 15
+                      %option{value: "16"} 16
+                      %option{value: "17"} 17
+                      %option{value: "18"} 18
+                      %option{value: "19"} 19
+                      %option{value: "20"} 20
+                      %option{value: "21"} 21
+                      %option{value: "22"} 22
+                      %option{value: "23"} 23
+                      %option{value: "24"} 24
+                      %option{value: "25"} 25
+                      %option{value: "26"} 26
+                      %option{value: "27"} 27
+                      %option{value: "28"} 28
+                      %option{value: "29"} 29
+                      %option{value: "30"} 30
+                      %option{value: "31"} 31
+                      %option{value: "32"} 32
+                      %option{value: "33"} 33
+                      %option{value: "34"} 34
+                      %option{value: "35"} 35
+                      %option{value: "36"} 36
+                      %option{value: "37"} 37
+                      %option{value: "38"} 38
+                      %option{value: "39"} 39
+                      %option{value: "40"} 40
+                  %span 年後に誕生
+            .js-children-add-0
+              .form-ttl 学校については？
+              .select-wrap
+                %select{name: "typeOfSchool"}
+                  %option{selected: "selected", value: ""} 選択してください
+                  %option{value: "0"} すべて公立
+                  %option{value: "1"} 小学校から私立
+                  %option{value: "2"} 中学校から私立
+                  %option{value: "3"} 高校から私立
+                  %option{value: "4"} 大学から私立
+            .js-children-add-0
+              .form-ttl 大学の通学は？
+              .form-flex
+                %label
+                  %input{name: "typeOfCommutingToSchool", type: "radio", value: "0"}
+                  %span 自宅から
+                %label
+                  %input{name: "typeOfCommutingToSchool", type: "radio", value: "1"}
+                  %span 一人暮らし
+            .js-children-add-0
+              .form-ttl 主に子育てする人の働き方
+              %label
+                %input{name: "spouseWorkStyle", type: "radio", value: "0"}
+                %span 子供が生まれたら、専業主婦（主夫）を続ける
+                %br
+              %label
+                %input{name: "spouseWorkStyle", type: "radio", value: "1"}
+                %span 子供が小学生になったら、扶養の範囲で働く
+                %br
+              %label
+                %input{name: "spouseWorkStyle", type: "radio", value: "2"}
+                %span 子供が小学生になったら、フルタイムで働く
+                %br
+              %label
+                %input{name: "spouseWorkStyle", type: "radio", value: "3"}
+                %span 子供が生まれてもフルタイムで働き続ける
+      %section
+        %h2 ライフスタイルについて
+        %dl
+          %dt
+            %i.ico-icon_house>
+            マイホームは？
+          %dd.form-myhome
+            %p.hasMyHome
+            %label
+              %input{:name => "hasMyHome", :type => "radio", :value => "0"}/
+              %span すでに保有している
+              %br
+            %label
+              %input{:name => "hasMyHome", :type => "radio", :value => "1"}/
+              %span これから購入する
+              %br
+            %label
+              %input{:name => "hasMyHome", :type => "radio", :value => "2"}/
+              %span 賃貸住宅のままで、マイホームは購入しない
+            .js-children-add-0
+              .form-ttl 住宅ローンについて
+              .form-flex
+              %label
+                %span 住宅ローンの残高
+                %input{:maxlength => "5", :name => "loanBalance", :type => "text", :value => ""}/
+                %span 万円
+              %p.loanInterestRate
+              %label
+                %span 金利
+                %input{:name => "loanInterestRate", :type => "text", :value => "2"}/
+                %span
+              .mt-1em
+                %span 残り
+                .select-wrap
+                  %select{name: "loanRemainingYear"}
+                    %option{selected: "selected", value: "1"} 1
+                    %option{value: "2"} 2
+                    %option{value: "3"} 3
+                    %option{value: "4"} 4
+                    %option{value: "5"} 5
+                    %option{value: "6"} 6
+                    %option{value: "7"} 7
+                    %option{value: "8"} 8
+                    %option{value: "9"} 9
+                    %option{value: "10"} 10
+                    %option{value: "11"} 11
+                    %option{value: "12"} 12
+                    %option{value: "13"} 13
+                    %option{value: "14"} 14
+                    %option{value: "15"} 15
+                    %option{value: "16"} 16
+                    %option{value: "17"} 17
+                    %option{value: "18"} 18
+                    %option{value: "19"} 19
+                    %option{value: "20"} 20
+                    %option{value: "21"} 21
+                    %option{value: "22"} 22
+                    %option{value: "23"} 23
+                    %option{value: "24"} 24
+                    %option{value: "25"} 25
+                    %option{value: "26"} 26
+                    %option{value: "27"} 27
+                    %option{value: "28"} 28
+                    %option{value: "29"} 29
+                    %option{value: "30"} 30
+                    %option{value: "31"} 31
+                    %option{value: "32"} 32
+                    %option{value: "33"} 33
+                    %option{value: "34"} 34
+                    %option{value: "35"} 35
+                    %option{value: "36"} 36
+                    %option{value: "37"} 37
+                    %option{value: "38"} 38
+                    %option{value: "39"} 39
+                    %option{value: "40"} 40
+                    %option{value: "41"} 41
+                    %option{value: "42"} 42
+                    %option{value: "43"} 43
+                    %option{value: "44"} 44
+                    %option{value: "45"} 45
+                    %option{value: "46"} 46
+                    %option{value: "47"} 47
+                    %option{value: "48"} 48
+                    %option{value: "49"} 49
+                %span 年
+            .form-myhome-add
+              .form-ttl マイホームについて
+              .form-flex
+                .select-wrap
+                  %select{name: "AgeOfBuyingMyHome"}
+                    %option{selected: "selected", value: "0"} 0
+                    %option{value: "1"} 1
+                    %option{value: "2"} 2
+                    %option{value: "3"} 3
+                    %option{value: "4"} 4
+                    %option{value: "5"} 5
+                    %option{value: "6"} 6
+                    %option{value: "7"} 7
+                    %option{value: "8"} 8
+                    %option{value: "9"} 9
+                    %option{value: "10"} 10
+                    %option{value: "11"} 11
+                    %option{value: "12"} 12
+                    %option{value: "13"} 13
+                    %option{value: "14"} 14
+                    %option{value: "15"} 15
+                    %option{value: "16"} 16
+                    %option{value: "17"} 17
+                    %option{value: "18"} 18
+                    %option{value: "19"} 19
+                    %option{value: "20"} 20
+                    %option{value: "21"} 21
+                    %option{value: "22"} 22
+                    %option{value: "23"} 23
+                    %option{value: "24"} 24
+                    %option{value: "25"} 25
+                    %option{value: "26"} 26
+                    %option{value: "27"} 27
+                    %option{value: "28"} 28
+                    %option{value: "29"} 29
+                    %option{value: "30"} 30
+                    %option{value: "31"} 31
+                    %option{value: "32"} 32
+                    %option{value: "33"} 33
+                    %option{value: "34"} 34
+                    %option{value: "35"} 35
+                    %option{value: "36"} 36
+                    %option{value: "37"} 37
+                    %option{value: "38"} 38
+                    %option{value: "39"} 39
+                    %option{value: "40"} 40
+                    %option{value: "41"} 41
+                    %option{value: "42"} 42
+                    %option{value: "43"} 43
+                    %option{value: "44"} 44
+                    %option{value: "45"} 45
+                    %option{value: "46"} 46
+                    %option{value: "47"} 47
+                    %option{value: "48"} 48
+                    %option{value: "49"} 49
+                %span 年後に
+                %br.sp/
+                %input{:maxlength => "5", :name => "priceOfMyHome", :type => "text", :value => ""}/
+                %span 万円程度の物件
+            .form-myhome-add
+              .form-ttl 家賃について
+              %label
+                %span 家賃
+                %input{:maxlength => "3", :name => "houseRent", :type => "text", :value => "6"}/
+                %span 万円 / 月
+        %dl
+          %dt
+            %i.ico-icon_car>
+            マイカーは？
+          %dd.form-mycar
+            %p.hasCar
+            %label
+              %input{:name => "hasCar", :type => "radio", :value => "1"}
+              %span 購入する
+              %br
+            %label
+              %input{:name => "hasCar", :type => "radio", :value => "0"}
+              %span 購入しない
+            .form-mycar-add
+              .form-ttl マイカーについて
+              .form-flex
+                %input{:maxlength => "4", :name => "priceOfCar", :type => "text"}
+                %span 万円の車を
+                %br.sp/
+                .select-wrap
+                  %select{:name => "intervalOfCar"}
+                    %option{:selected => "selected", value: "1"} 1
+                    %option{value: "2"} 2
+                    %option{value: "3"} 3
+                    %option{value: "4"} 4
+                    %option{value: "5"} 5
+                    %option{value: "6"} 6
+                    %option{value: "7"} 7
+                    %option{value: "8"} 8
+                    %option{value: "9"} 9
+                    %option{value: "10"} 10
+                %span 年ごとに買い替える
+        %dl
+          %dt
+            %i.ico-icon_plane>
+            海外旅行は？
+          %dd.form-travel
+            %p.overseasTravel
+            %label
+              %input{:name => "overseasTravel", :type => "radio", :value => "1"}/
+              %span 定期的に行きたい
+              %br
+            %label
+              %input{:name => "overseasTravel", :type => "radio", :value => "0"}/
+              %span 特に予定はない
+            .form-mycar-add
+              .form-ttl 海外旅行について
+              .form-flex
+                .select-wrap.sp-mt10
+                  %select{:name => "intervalOverseasTravel"}
+                    %option{:selected => "selected", :value => "1"} 1
+                    %option{value: "2"} 2
+                    %option{value: "3"} 3
+                    %option{value: "4"} 4
+                    %option{value: "5"} 5
+                    %option{value: "6"} 6
+                    %option{value: "7"} 7
+                    %option{value: "8"} 8
+                    %option{value: "9"} 9
+                    %option{value: "10"} 10
+                %span 年ごとに
+              .form-flex.mt-1em
+                %input{:maxlength => "3", :name => "budgetOfOverseasTravel", :type => "text", :value => "97"}/
+                %span 万円（総額）くらいかけて行きたい
+              %p.form-note.mt-1em
+                【参考】旅行費用の平均：1人当たり24.2万円
+                %br/
+                JTB「2019年の旅行動向見通し」2018年実績値より
+        %dl
+          %dt.form-other-ttl
+            %i.ico-icon_wallet
+            %span
+              その他に大きな出費は
+              %br.pc>/
+              ありますか？
+          %dd
+            .form-other
+              .select-wrap
+                %select{:name => "intervalOtherOutgo_0"}
+                  %option{:selected => "selected", :value => ""} -
+                  %option{value: "1"} 1
+                  %option{value: "2"} 2
+                  %option{value: "3"} 3
+                  %option{value: "4"} 4
+                  %option{value: "5"} 5
+                  %option{value: "6"} 6
+                  %option{value: "7"} 7
+                  %option{value: "8"} 8
+                  %option{value: "9"} 9
+                  %option{value: "10"} 10
+              %span.mr-05em 年おきに
+              %br.sp/
+              %input.sp-mt10{:maxlength => "3", :name => "budgetOtherOutgo_0", :type => "text", :value => "0"}/
+              %span 万円の出費をする
+            %p.intervalOtherOutgo_1.budgetOtherOutgo_1.mt-1em
+            .form-other
+              .select-wrap
+                %select{:name => "intervalOtherOutgo_1"}
+                  %option{:selected => "selected", :value => ""} -
+                  %option{value: "1"} 1
+                  %option{value: "2"} 2
+                  %option{value: "3"} 3
+                  %option{value: "4"} 4
+                  %option{value: "5"} 5
+                  %option{value: "6"} 6
+                  %option{value: "7"} 7
+                  %option{value: "8"} 8
+                  %option{value: "9"} 9
+                  %option{value: "10"} 10
+              %span.mr-05em 年おきに
+              %br.sp/
+              %input.sp-mt10{:maxlength => "3", :name => "budgetOtherOutgo_1", :type => "text", :value => "0"}/
+              %span 万円の出費をする
+            %p.intervalOtherOutgo_2.budgetOtherOutgo_2.mt-1em
+            .form-other
+              .select-wrap
+                %select{:name => "intervalOtherOutgo_2"}
+                  %option{:selected => "selected", :value => ""} -
+                  %option{value: "1"} 1
+                  %option{value: "2"} 2
+                  %option{value: "3"} 3
+                  %option{value: "4"} 4
+                  %option{value: "5"} 5
+                  %option{value: "6"} 6
+                  %option{value: "7"} 7
+                  %option{value: "8"} 8
+                  %option{value: "9"} 9
+                  %option{value: "10"} 10
+              %span.mr-05em 年おきに
+              %br.sp/
+              %input.sp-mt10{:maxlength => "3", :name => "budgetOtherOutgo_2", :type => "text", :value => "0"}/
+              %span 万円の出費をする
+            %p.intervalOtherOutgo_3.budgetOtherOutgo_3.mt-1em
+            .form-other
+              .select-wrap
+                %select{:name => "intervalOtherOutgo_3"}
+                  %option{:selected => "selected", :value => ""} -
+                  %option{value: "1"} 1
+                  %option{value: "2"} 2
+                  %option{value: "3"} 3
+                  %option{value: "4"} 4
+                  %option{value: "5"} 5
+                  %option{value: "6"} 6
+                  %option{value: "7"} 7
+                  %option{value: "8"} 8
+                  %option{value: "9"} 9
+                  %option{value: "10"} 10
+              %span.mr-05em 年おきに
+              %br.sp/
+              %input.sp-mt10{:maxlength => "3", :name => "budgetOtherOutgo_3", :type => "text", :value => "0"}/
+              %span 万円の出費をする
+      %section
+        %h2 セカンドライフについて
+        %dl
+          %dt
+            %i.ico-icon_person2>
+            退職する年齢
+          %dd
+            .form-retire
+              %b.second-label ご自身：
+              .select-wrap
+                %select{:name => "myRetire"}
+                  %option{:selected => "selected", :value => "60"} 60
+                  %option{:value => "65"} 65
+                  %option{:value => "70"} 70
+              %span 歳
+              %br
+            .form-note
+              %b.pc>  
+              ※働いていない場合は60のままとしてください。
+            .form-retire
+              %b 配偶者：
+              .select-wrap
+                %select{:name => "spouseRetire"}
+                  %option{:selected => "selected", :value => "60"} 60
+                  %option{:value => "65"} 65
+                  %option{:value => "70"} 70
+              %span 歳
+              %br
+            .form-note
+              %b.pc>  
+              ※働いていない場合は60のままとしてください。
+        %dl
+          %dt
+            %i.ico-icon_purse>
+            老後の収入は？
+          %dd
+            .form-ttl 老後の収入額（年額）を入力してください。
+            .form-retire
+              %label.mt-1em
+                %b.second-label ご自身：
+                %span 年
+                %input{:maxlength => "4", :name => "myPension", :type => "text", :value => "186"}/
+                %span 万円
+            .form-retire
+              %label.mt-1em.spouse-pension
+                %b 配偶者：
+                %span 年
+                %input{:maxlength => "4", :name => "spousePension", :type => "text", :value => "186"}/
+                %span 万円
+        .pension-reference
+          %p.pension-ttl ＜参考＞平成28年度の年金額
+          .pension-contents
+            .pension-row.pc
+              .pension-dt
+              .pension-dd 年金額（年額）
+            .pension-row
+              .pension-dt 厚生年金と基礎年金(国民年金部分)の両方を受給している人の平均
+              .pension-dd
+                %span.sp> 年金額（年額）：
+                186.4万円
+            .pension-row
+              .pension-dt 基礎年金(国民年金部分)だけを受給している人の平均
+              .pension-dd
+                %span.sp> 年金額（年額）：
+                61.6万円
+            .pension-row
+              .pension-dt 20歳から60歳になるまで、すべて国民年金保険料を納付した、または第3号被保険者(被扶養配偶者)であった場合の年金額
+              .pension-dd
+                %span.sp> 年金額（年額）：
+                78.0万円
+          .pension-note
+            %p ※厚生年金は、現役時代の収入によって異なります。
+            %p ※基礎年金（国民年金部分）は、保険料納付期間によって異なります。（例）20歳から60歳になるまでの間、すべて厚生年金に加入し、配偶者が第3号被保険者であった場合、夫婦での年金額は、186.4万円と78.0万円の合計額264.4万円となります。
+          .pension-link-block
+            .pension-link-inner
+              %p.pension-link-ttl ▼年金制度についてもっと詳しく確認してみる
+              %p.pension-link
+                %a{:href => "https://www.zenginkyo.or.jp/article/tag-a/3759/"} もう一度確認しておきたい！日本の年金制度
+        %dl
+          %dt
+            %i.ico-icon_purse>
+            老後の生活費は？
+          %dd
+            .form-ttl 老後に予想される生活費（月額）を入力してください。
+            .form-retire
+              %label.mt-1em
+                %span 月
+                %input{:maxlength => "4", :name => "mySecondOut", :type => "text", :value => "22"}/
+                %span 万円
+        .pension-reference
+          %p.pension-ttl ＜参考＞老後の平均支出額
+          .pension-contents
+            .pension-row
+              .pension-dt
+                %b> 高齢夫婦（無職）世帯
+                の1ヶ月の平均生活費
+              .pension-dd 22.3万円（月）
+            .pension-row
+              .pension-dt
+                %b> 高齢単身（無職）世帯
+                の1ヶ月の平均生活費
+              .pension-dd 13.2万円（月）
+          .pension-note
+            %p ※「高齢夫婦無職世帯」は、夫65歳以上、妻60歳以上の夫婦のみの無職世帯です。
+            %p ※「高齢単身無職世帯」は、60歳以上の単身世帯です。
+            %p ※1ヶ月の平均支出額から、住居費と教育費を除いた金額になります。
+            %p ※総務省「家計調査年報（家計収支編）平成28年」より。
+      #form-submit.btn-2
+        シミュレーションスタート 
+        %i.fa.fa-long-arrow-right{"aria-hidden" => "true"}
+      %input{:name => "accessFrom", :type => "hidden", :value => "webpage"}
+
+
+-# .wrapper
+
+-# %html
+-#   %head
+-#     %meta{"charset":"UTF-8"}
+-#     %title Life Plan
+
+-#   %body
+-#     %header
+-#       %h1.Title ライフプランシュミレーション
+-#       .navbar
+-#         .nav-link ユーザ名
+-#         = current_user.name
+-#       .nav-lists
+-#       = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Button'
+-#     .Main-box
+-#       %h2.heading-name 収入について
+-#       .messages
+-#         .message
+-#           = form_with(model: @incomes, url: new_income_path(@income)) do |form|
+-#             %p= form.label :total_income, "年収"
+-#             = form.text_field :total_income, placeholder: ""
+-#             %p= form.label :total_income, "所得税"
+-#             = form.text_field :total_income, placeholder: ""
+-#       %h3.heading-name 支出について
+-#       .messages
+-#         .message
+-#           = form_with(model: @incomes, url: new_income_path(@income)) do |form|
+-#             %P= form.label :living, "生活費"
+-#             = form.text_field :name, placeholder: ""
+-#             %p= form.label :living, "住宅関連費"
+-#             = form.text_field :name, placeholder: ""
+-#             %p= form.label :living, "交通費"
+-#             = form.text_field :name, placeholder: ""
+-#             %p= form.label :living, "教育費"
+-#             = form.text_field :name, placeholder: ""
+-#             %p= form.label :living, "保険料"
+-#             = form.text_field :name, placeholder: ""
+-#             %p= form.label :living, "その他"
+-#             = form.text_field :name, placeholder: ""
+-#             %p= form.submit "シュミレーションする", class: 'form-button'
