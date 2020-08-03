@@ -1,33 +1,30 @@
 class IncomesController < ApplicationController
 
-  def index
-    @incomes = Income.order(created_at: :asc)
+	def index
+		@income = Income.new
+    # @incomes = Income.order(created_at: :asc)
 	end
  
 	def new
-		@income = Income.create(params[:income])
+		@income = Income.new
 	end
  
 	def create
-		@income = Income.new(params[:id])
+		@income = Income.new(income_params)
 		if @income.save
-			redirect_to @incomes, notice: "収入科目を登録しました"
+			redirect_to income_path(@income.id), notice: "登録しました"
 		else
-			render "incomes/index"
+			render :index
 		end
 	end
  
-	def update
-		@income = Income.find(params[:id])
-		@income.assign_attributes(params[:id])
-		if @income.save
-			redirect_to balance_confirm_path
-		else
-			render template: "balance_confirm/top"
-		end
+	def show
+		@income = Income.find_by(user_id: current_user.id)
 	end
  
-	def destroy
+	private
+  def income_params
+    params.require(:income).permit(:total_income, :saving, :housing, :transportation, :event).merge(user_id: current_user.id)
 	end
-
+	
 end

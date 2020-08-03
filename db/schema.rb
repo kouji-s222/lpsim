@@ -17,13 +17,12 @@ ActiveRecord::Schema.define(version: 2020_06_24_150607) do
 
   create_table "incomes", force: :cascade do |t|
     t.integer "total_income"
-    t.integer "income_tax"
-    t.integer "living"
+    t.integer "saving"
     t.integer "housing"
     t.integer "transportation"
-    t.integer "education"
-    t.integer "insurance"
     t.integer "event"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_incomes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -40,4 +39,5 @@ ActiveRecord::Schema.define(version: 2020_06_24_150607) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "incomes", "users"
 end

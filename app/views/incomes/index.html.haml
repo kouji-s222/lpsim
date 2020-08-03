@@ -11,7 +11,7 @@
   .top-note
     %p ※当シミュレーション結果は、一般的なデータをもとに独自の基準で試算したもので実際の値とは異なる場合があり、その結果を保証するものではありません。 あくまでも目安としてご利用ください。
   .page-advance
-    %form.content{:action => "./result_a.html", :method => "post"}
+    = form_with model: @income, url: {controller: 'incomes', action: 'create' }, class:"content", local: true do |f|
       %section
         %h2 世帯構成と収入について
         %dl
@@ -85,12 +85,12 @@
               %p.mySavings 年収と貯蓄は？
               .form-flex
                 %span 年収
-                %input{maxlength: "4", name: "myIncome", type: "text", value: ""}
+                = f.text_field :total_income, class: "", maxlength: "4", value: ""
                 %span 万円
                 %br
               .form-flex
                 %span 貯蓄
-                %input{maxlength: "5", name: "mySavings", type: "text", value: ""}
+                = f.text_field :saving, class: "", maxlength: "5", value: ""
                 %span 万円
         %dl
           %dt 配偶者は？
@@ -682,7 +682,7 @@
               .form-flex
               %label
                 %span 住宅ローンの残高
-                %input{:maxlength => "5", :name => "loanBalance", :type => "text", :value => ""}/
+                = f.text_field :housing, class: "", maxlength: "5", value: ""
                 %span 万円
               %p.loanInterestRate
               %label
@@ -870,7 +870,7 @@
                     %option{value: "10"} 10
                 %span 年ごとに
               .form-flex.mt-1em
-                %input{:maxlength => "3", :name => "budgetOfOverseasTravel", :type => "text", :value => "97"}/
+                = f.text_field :transportation, class: "", maxlength: "3", value: "97"
                 %span 万円（総額）くらいかけて行きたい
               %p.form-note.mt-1em
                 【参考】旅行費用の平均：1人当たり24.2万円
@@ -900,7 +900,7 @@
                   %option{value: "10"} 10
               %span.mr-05em 年おきに
               %br.sp/
-              %input.sp-mt10{:maxlength => "3", :name => "budgetOtherOutgo_0", :type => "text", :value => "0"}/
+              = f.text_field :event, class: "sp-mt10", maxlength: "3", value: "0"
               %span 万円の出費をする
             %p.intervalOtherOutgo_1.budgetOtherOutgo_1.mt-1em
             .form-other
@@ -1067,9 +1067,7 @@
             %p ※1ヶ月の平均支出額から、住居費と教育費を除いた金額になります。
             %p ※総務省「家計調査年報（家計収支編）平成28年」より。
       #form-submit.btn-2
-        シミュレーションスタート 
-        %i.fa.fa-long-arrow-right{"aria-hidden" => "true"}
-      %input{:name => "accessFrom", :type => "hidden", :value => "webpage"}
+        = f.submit "シミュレーションスタート ", class: "SubmitBtn"
 
 
 -# .wrapper
