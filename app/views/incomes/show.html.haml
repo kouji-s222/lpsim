@@ -1,1 +1,15 @@
 収支確認
+
+= column_chart User.group_by_day(:created_at).count
+-# = line_chart [ { name: "記録", data: @graph.map { |record| record.slice(:donation_day, :ALT).values }}, { name: "基準値下", data: @donation_days.map{|day| [day, 8]} }, { name: "基準値上", data: @donation_days.map{|day| [day, 49]} } ], min: 0, max: 60
+
+total_income
+= "#{@income.total_income}"
+saving
+= "#{@income.saving}"
+housing
+= "#{@income.housing}"
+transportation
+= "#{@income.transportation}"
+event
+= "#{@income.event}"
