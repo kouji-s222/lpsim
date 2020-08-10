@@ -14,7 +14,8 @@
 ## シュミレーション結果はグラフでわかりやすく表示します。
 <img width="1440" alt="スクリーンショット 2020-08-10 19 49 16" src="https://user-images.githubusercontent.com/66235208/89775449-c7861880-db42-11ea-9949-01b621011bdf.png">
 
-
+herokuでのデプロイ
+https://lifeplan22.herokuapp.com/
 
 ## usersテーブル
 |Column|Type|Options|
