@@ -1,15 +1,32 @@
-収支確認
+.wrapper
+  %header
+    .content.header-page
+      %h1 シュミレーション結果
+      .navbar
+        .nav-user ユーザ名 :&nbsp
+        = current_user.name
+      .nav-link
+      = link_to "Edit", destroy_user_session_path, method: :delete, class: 'Button'
+  .advance
+    .graph
+      = line_chart @graph
+  .advance
+    .graph
+      = line_chart @balance, colors: ["#66CC33", "#666"]
 
-= column_chart User.group_by_day(:created_at).count
--# = line_chart [ { name: "記録", data: @graph.map { |record| record.slice(:donation_day, :ALT).values }}, { name: "基準値下", data: @donation_days.map{|day| [day, 8]} }, { name: "基準値上", data: @donation_days.map{|day| [day, 49]} } ], min: 0, max: 60
+.btn-2
+  = link_to "トップに戻る", root_path, class: "SubmitBtn"
 
-total_income
-= "#{@income.total_income}"
-saving
-= "#{@income.saving}"
-housing
-= "#{@income.housing}"
-transportation
-= "#{@income.transportation}"
-event
-= "#{@income.event}"
+-# = @payment
+-# 年齢
+-# = "#{@income.loanrate}"
+-# 年収
+-# = "#{@income.total_income}"
+-# 貯蓄
+-# = "#{@income.saving}"
+-# housing
+-# = "#{@income.housing}"
+-# transportation
+-# = "#{@income.transportation}"
+-# event
+-# = "#{@income.event}"

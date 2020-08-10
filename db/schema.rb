@@ -16,9 +16,12 @@ ActiveRecord::Schema.define(version: 2020_06_24_150607) do
   enable_extension "plpgsql"
 
   create_table "incomes", force: :cascade do |t|
+    t.integer "myAge"
     t.integer "total_income"
     t.integer "saving"
     t.integer "housing"
+    t.string "loanrate"
+    t.integer "loanYear"
     t.integer "transportation"
     t.integer "event"
     t.bigint "user_id"
