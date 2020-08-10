@@ -12,7 +12,8 @@
 <img width="905" alt="スクリーンショット 2020-08-09 20 18 21" src="https://user-images.githubusercontent.com/66235208/89730912-fb4b3a80-da7d-11ea-8732-3fa3a8c4d6de.png">
 
 ## シュミレーション結果はグラフでわかりやすく表示します。
-<img width="1440" alt="スクリーンショット 2020-08-09 20 18 54" src="https://user-images.githubusercontent.com/66235208/89730914-fdad9480-da7d-11ea-83f4-abbb12669f4a.png">
+<img width="1440" alt="スクリーンショット 2020-08-10 19 49 16" src="https://user-images.githubusercontent.com/66235208/89775449-c7861880-db42-11ea-9949-01b621011bdf.png">
+
 
 
 ## usersテーブル
