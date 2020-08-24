@@ -5,7 +5,7 @@ class CreateIncomes < ActiveRecord::Migration[6.0]
       t.integer :total_income
       t.integer :saving
       t.integer :housing
-      t.string :loanrate
+      t.float :loanrate
       t.integer :loanYear
       t.integer :transportation
       t.integer :event
